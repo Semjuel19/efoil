@@ -10,21 +10,22 @@ html {
 }
 
 :root {
-    /* Unified Color Palette */
-    --primary-color: #1e3a8a;           /* Primary Blue */
-    --secondary-color: #0ea5e9;         /* Light Blue */
-    --accent-color: #f59e0b;            /* Contrast Orange */
+    /* MINIMAL 3-COLOR PALETTE - Only these 3 colors used throughout the design */
+    --primary-color: #1e3a8a;           /* Primary Blue - Dark blue for headers, borders, primary actions */
+    --secondary-color: #0ea5e9;         /* Light Blue - Lighter blue for secondary elements, gradients */
+    --accent-color: #ea580c;            /* Warm Orange - Contrast color for warnings, highlights, accents */
     
     /* Neutral Colors */
     --dark-color: #000000;              /* Pure Black for text */
     --light-color: #ffffff;             /* Pure White */
     --gray-color: #6b7280;              /* Medium gray for secondary text */
-    --light-gray: #f3f4f6;              /* Light gray backgrounds */
-    --border-color: #e5e7eb;            /* Light gray borders */
+    --light-gray: #f8fafc;              /* Very light gray backgrounds */
+    --border-color: #e2e8f0;            /* Light gray borders */
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #0ea5e9 100%);
-    --gradient-secondary: linear-gradient(135deg, #0ea5e9 0%, #1e3a8a 100%);
+    /* Gradients - Only using our 3 colors */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --gradient-secondary: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
     
     /* Shadows */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -568,7 +569,7 @@ p {
 }
 
 .newsletter {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--gradient-primary);
     padding: 3rem;
     border-radius: 20px;
     text-align: center;
@@ -718,7 +719,7 @@ p {
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--gray-color);
     color: var(--gray-color);
 }
 
@@ -787,7 +788,7 @@ p {
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--gradient-primary);
     color: var(--light-color);
     padding: 120px 0 80px;
     text-align: center;
@@ -813,7 +814,7 @@ p {
 }
 
 .safety-header {
-    background: linear-gradient(135deg, var(--accent-color), #d97706);
+    background: var(--gradient-accent);
 }
 
 /* Navigation Pills */
@@ -999,7 +1000,7 @@ p {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
 }
 
 .buy-card::before {
@@ -1009,7 +1010,7 @@ p {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    background: var(--secondary-color);
 }
 
 .locations-card::before {
@@ -1019,7 +1020,7 @@ p {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+    background: var(--primary-color);
 }
 
 .safety-card::before {
@@ -1029,7 +1030,7 @@ p {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    background: var(--secondary-color);
 }
 
 .quick-link-card h3 {
@@ -1272,7 +1273,7 @@ p {
     padding: 2rem;
     background: var(--light-gray);
     border-radius: 16px;
-    border-left: 4px solid var(--primary-color);
+    border-left: 3px solid var(--primary-color);
 }
 
 .why-authorized h5 {
@@ -1459,19 +1460,19 @@ p {
 }
 
 .location-card.featured {
-    border-left: 4px solid var(--secondary-color);
+    border-left: 3px solid var(--secondary-color);
 }
 
 .location-card.warning {
-    border-left: 4px solid var(--accent-color);
+    border-left: 3px solid var(--accent-color);
 }
 
 .location-card.caution {
-    border-left: 4px solid var(--accent-color);
+    border-left: 3px solid var(--accent-color);
 }
 
 .location-card.premium {
-    border-left: 4px solid var(--primary-color);
+    border-left: 3px solid var(--primary-color);
 }
 
 .location-header {
@@ -1602,20 +1603,20 @@ p {
 }
 
 .warning-notes {
-    background: rgba(245, 158, 11, 0.1);
+    background: rgba(14, 165, 233, 0.1);
     padding: 1rem;
     border-radius: 8px;
-    border-left: 4px solid var(--accent-color);
+    border-left: 3px solid var(--primary-color);
     margin: 1.5rem 0;
 }
 
 .warning-notes h5 {
-    color: var(--accent-color);
+    color: var(--primary-color);
     margin-bottom: 0.8rem;
 }
 
 .warning-notes li::before {
-    background: var(--accent-color);
+    background: var(--primary-color);
 }
 
 .location-content a {
@@ -1637,17 +1638,17 @@ p {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: rgba(245, 158, 11, 0.1);
+    background: rgba(14, 165, 233, 0.1);
     padding: 1rem 1.5rem;
     border-radius: 10px;
     margin-bottom: 3rem;
-    border-left: 4px solid var(--accent-color);
+    border-left: 3px solid var(--secondary-color);
 }
 
 .warning-icon {
     font-size: 1.5rem;
     flex-shrink: 0;
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 .warning-text {
@@ -1675,11 +1676,11 @@ p {
 }
 
 .destination-card.verified {
-    border-left: 4px solid var(--secondary-color);
+    border-left: 3px solid var(--secondary-color);
 }
 
 .destination-card.premium {
-    border-left: 4px solid #8b5cf6;
+    border-left: 3px solid var(--primary-color);
 }
 
 .destination-header {
@@ -1807,15 +1808,15 @@ p {
 }
 
 .card-header.efoil {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--gradient-primary);
 }
 
 .card-header.esurf {
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    background: var(--gradient-secondary);
 }
 
 .card-header.motorsurf {
-    background: linear-gradient(135deg, var(--accent-color), #d97706);
+    background: var(--gradient-accent);
 }
 
 .card-header h3 {
@@ -2040,35 +2041,7 @@ p {
     box-shadow: var(--shadow-xl);
 }
 
-.advantage-item.weather::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--primary-color);
-}
-
-.advantage-item.eco::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--primary-color);
-}
-
-.advantage-item.independent::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--primary-color);
-}
+/* Removed colorful top borders from advantage items for cleaner look */
 
 .advantage-header {
     display: flex;
@@ -2101,7 +2074,7 @@ p {
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--gradient-primary);
     color: var(--light-color);
     padding: 80px 0;
     text-align: center;
@@ -2129,9 +2102,16 @@ p {
 /* Brands Showcase */
 .brands-showcase {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
     margin-bottom: 4rem;
+}
+
+/* Style for last item when it's alone in a row */
+.brands-showcase > *:last-child:nth-child(2n + 1) {
+    grid-column: 1 / span 2;
+    margin: 0 auto;
+    max-width: 50%;
 }
 
 .brand-showcase {
@@ -2148,7 +2128,7 @@ p {
 }
 
 .brand-logo {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--gradient-primary);
     color: var(--light-color);
     padding: 2rem;
     text-align: center;
@@ -2182,8 +2162,15 @@ p {
 
 /* Warning Section */
 .warning-section {
-    background: #fff3cd;
-    border-left: 5px solid #ffc107;
+    background: rgba(14, 165, 233, 0.1);
+    border-left: 3px solid var(--primary-color);
+}
+
+.warning-box {
+    background: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border-left: 3px solid var(--secondary-color);
 }
 
 .warning-box {
@@ -2191,7 +2178,7 @@ p {
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: var(--shadow-lg);
-    border-left: 6px solid #f59e0b;
+    border-left: 3px solid var(--accent-color);
     position: relative;
 }
 
@@ -2200,7 +2187,7 @@ p {
     position: absolute;
     top: -12px;
     left: 2rem;
-    background: #f59e0b;
+    background: var(--accent-color);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -2210,7 +2197,7 @@ p {
 }
 
 .warning-content h3 {
-    color: #856404;
+    color: var(--accent-color);
     margin-bottom: 1rem;
 }
 
@@ -2238,17 +2225,17 @@ p {
     content: '•';
     position: absolute;
     left: 0;
-    color: #ffc107;
+    color: var(--accent-color);
     font-weight: bold;
 }
 
 .recommendation {
-    background: #d4edda;
-    border: 1px solid #c3e6cb;
+    background: rgba(14, 165, 233, 0.1);
+    border: 1px solid var(--secondary-color);
     border-radius: 8px;
     padding: 1rem;
     margin-top: 1rem;
-    color: #155724;
+    color: var(--secondary-color);
 }
 
 /* Services Section */
@@ -2429,15 +2416,15 @@ p {
 }
 
 .location-card.warning {
-    border: 2px solid var(--accent-color);
+    border: 2px solid var(--primary-color);
 }
 
 .location-card.caution {
-    border: 2px solid #f39c12;
+    border: 2px solid var(--secondary-color);
 }
 
 .location-card.premium {
-    border: 2px solid #9b59b6;
+    border: 2px solid var(--primary-color);
 }
 
 .location-header {
@@ -2553,18 +2540,18 @@ p {
 }
 
 .warning-notes {
-    background: #fff3cd;
+    background: rgba(234, 88, 12, 0.1);
     padding: 1rem;
     border-radius: 8px;
-    border-left: 4px solid #ffc107;
+    border-left: 3px solid var(--accent-color);
 }
 
 .warning-notes h5 {
-    color: #856404;
+    color: var(--accent-color);
 }
 
 .warning-notes li::before {
-    color: #ffc107;
+    color: var(--accent-color);
 }
 
 /* Flight Destinations */
@@ -2572,20 +2559,20 @@ p {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: #fff3cd;
+    background: rgba(234, 88, 12, 0.1);
     padding: 1rem 1.5rem;
     border-radius: 10px;
     margin-bottom: 3rem;
-    border-left: 4px solid #ffc107;
+    border-left: 3px solid var(--accent-color);
 }
 
 .warning-icon {
     font-size: 1.5rem;
-    color: #ffc107;
+    color: var(--accent-color);
 }
 
 .warning-text {
-    color: #856404;
+    color: var(--accent-color);
 }
 
 .destinations-grid {
@@ -2612,7 +2599,7 @@ p {
 }
 
 .destination-card.premium {
-    border: 2px solid #9b59b6;
+    border: 2px solid var(--primary-color);
 }
 
 .destination-header {
@@ -2940,15 +2927,15 @@ p {
 }
 
 .equipment-card.helmet {
-    border-top: 4px solid var(--accent-color);
+    border-top: 3px solid var(--primary-color);
 }
 
 .equipment-card.vest {
-    border-top: 4px solid #f59e0b;
+    border-top: 3px solid var(--secondary-color);
 }
 
 .equipment-card.gps {
-    border-top: 4px solid var(--secondary-color);
+    border-top: 3px solid var(--primary-color);
 }
 
 .equipment-badge {
@@ -3249,26 +3236,26 @@ p {
 .safety-note {
     display: flex;
     gap: 1rem;
-    background: #d1ecf1;
+    background: rgba(14, 165, 233, 0.1);
     padding: 1.5rem;
     border-radius: 10px;
     margin-top: 3rem;
-    border-left: 4px solid #17a2b8;
+    border-left: 3px solid var(--secondary-color);
 }
 
 .note-icon {
     font-size: 1.5rem;
-    color: #17a2b8;
+    color: var(--secondary-color);
     flex-shrink: 0;
 }
 
 .note-content h4 {
-    color: #0c5460;
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 
 .note-content p {
-    color: #0c5460;
+    color: var(--primary-color);
     margin: 0;
 }
 
@@ -3419,15 +3406,15 @@ p {
 }
 
 .weather-category.safe {
-    border: 2px solid #28a745;
+    border: 2px solid var(--secondary-color);
 }
 
 .weather-category.caution {
-    border: 2px solid #ffc107;
+    border: 2px solid var(--accent-color);
 }
 
 .weather-category.danger {
-    border: 2px solid #dc3545;
+    border: 2px solid var(--accent-color);
 }
 
 .weather-category h3 {
@@ -3438,16 +3425,16 @@ p {
 }
 
 .weather-category.safe h3 {
-    background: #28a745;
+    background: var(--secondary-color);
 }
 
 .weather-category.caution h3 {
-    background: #ffc107;
+    background: var(--accent-color);
     color: var(--dark-color);
 }
 
 .weather-category.danger h3 {
-    background: #dc3545;
+    background: var(--accent-color);
 }
 
 .weather-conditions {
@@ -4106,7 +4093,7 @@ p {
 }
 
 .partner-card.premium {
-    border: 2px solid #9b59b6;
+    border: 2px solid var(--primary-color);
 }
 
 .partner-logo {
@@ -4311,7 +4298,7 @@ p {
 }
 
 .membership-card.premium {
-    border: 2px solid #9b59b6;
+    border: 2px solid var(--primary-color);
 }
 
 .membership-header {
@@ -4327,7 +4314,7 @@ p {
 }
 
 .membership-card.premium .membership-header {
-    background: #9b59b6;
+    background: var(--primary-color);
 }
 
 .membership-header h3 {
