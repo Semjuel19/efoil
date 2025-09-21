@@ -25,9 +25,9 @@
          </div>
         <div class="nav-menu" id="nav-menu">
           <a href="#co-je-efoil" class="nav-link">Čo je eFoil</a>
+          <a href="#bezpecnost" class="nav-link">Bezpečnosť</a>
           <a href="#kde-kupit" class="nav-link">Kde kúpiť</a>
           <a href="#kde-jazdit" class="nav-link">Kde jazdiť</a>
-          <a href="#bezpecnost" class="nav-link">Bezpečnosť</a>
           <a href="#komunita" class="nav-link">Komunita</a>
           <a href="#kontakt" class="nav-link">Kontakt</a>
         </div>
@@ -1578,10 +1578,18 @@
             Prihlás sa na odber noviniek a nezmeškaj žiadne eventy ani
             novinky zo sveta eFoilingu.
           </p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Tvoj email" required />
-            <button type="submit" class="btn btn-primary">Prihlásiť sa</button>
+          <!-- Replace with your actual Mailchimp form action URL -->
+          <form class="newsletter-form" action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+            <input type="email" name="EMAIL" placeholder="Tvoj email" required />
+            <input type="hidden" name="SOURCE" value="website-newsletter-section" />
+            <!-- Add additional Mailchimp hidden fields here when you get your form -->
+            <button type="submit" class="btn btn-primary" name="subscribe">Prihlásiť sa</button>
           </form>
+          
+          <!-- Newsletter signup instructions (remove after Mailchimp setup) -->
+          <div class="mailchimp-setup-note" style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 8px; font-size: 0.9rem; opacity: 0.8;">
+            <strong>Pre administrátora:</strong> Nahraďte action="#" skutočnou Mailchimp URL po nastavení účtu.
+          </div>
         </div>
       </div>
     </section>
@@ -1619,18 +1627,34 @@
 
           <div class="contact-form">
             <h3>Napíš nám</h3>
-            <form>
-              <input type="text" name="name" placeholder="Vaše meno" required />
+            <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+              <!-- Hidden field for Netlify Forms -->
+              <input type="hidden" name="form-name" value="contact" />
+              
+              <!-- Honeypot field for spam protection -->
+              <div style="display: none;">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+              </div>
+              
+              <input type="text" name="name" placeholder="Tvoje meno" required />
               <input
                 type="email"
                 name="email"
                 placeholder="Tvoj email"
                 required
               />
+              <select name="subject" required>
+                <option value="membership">Členstvo v združení</option>
+                <option value="partnership">Partnerstvo a sponzoring</option>
+                <option value="technical">Technická spolupráca</option>
+                <option value="events">Eventy a podujatia</option>
+                <option value="general">Všeobecný dotaz</option>
+                <option value="other">Iné</option>
+              </select>
               <textarea
                 name="message"
                 rows="6"
-                placeholder="Vaša správa"
+                placeholder="Tvoja správa"
                 required
               ></textarea>
               <div style="margin: 1rem 0; display: flex; align-items: center">
@@ -1656,6 +1680,11 @@
                 Odoslať správu
               </button>
             </form>
+            
+            <!-- Success Message (hidden by default) -->
+            <div id="contact-success" style="display: none; background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-top: 1rem; border: 1px solid #c3e6cb;">
+              <strong>Ďakujeme!</strong> Tvoja správa bola úspešne odoslaná. Odpovieme vám čo najskôr.
+            </div>
           </div>
         </div>
       </div>
@@ -1716,9 +1745,12 @@
           Prihlás sa na odber noviniek a nezmeškaj žiadne eventy ani novinky
           zo sveta eFoilingu.
         </p>
-        <form class="popup-form">
-          <input type="email" placeholder="Tvoj email" required />
-          <button type="submit" class="btn btn-primary">Prihlásiť sa</button>
+        <!-- Replace with your actual Mailchimp form action URL -->
+        <form class="popup-form" action="#" method="post" target="_blank">
+          <input type="email" name="EMAIL" placeholder="Tvoj email" required />
+          <input type="hidden" name="SOURCE" value="website-popup" />
+          <!-- Add additional Mailchimp hidden fields here when you get your form -->
+          <button type="submit" class="btn btn-primary" name="subscribe">Prihlásiť sa</button>
         </form>
       </div>
     </div>

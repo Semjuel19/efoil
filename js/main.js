@@ -68,49 +68,82 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Newsletter form submissions
+    // Newsletter form submissions (Mailchimp integration)
     const newsletterForms = document.querySelectorAll('.newsletter-form, .popup-form');
     newsletterForms.forEach(form => {
         form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
+            const email = this.querySelector('input[name="EMAIL"]').value;
             
             // Simple email validation
-            if (validateEmail(email)) {
-                // Here you would typically send the email to your backend
-                alert('Ďakujeme za prihlásenie k odberu noviniek!');
-                this.querySelector('input[type="email"]').value = '';
-                
-                // Close popup if it's the popup form
-                if (this.classList.contains('popup-form')) {
+            if (!validateEmail(email)) {
+                e.preventDefault();
+                alert('Prosím zadajte platnú emailovú adresu.');
+                return;
+            }
+            
+            // If action is still "#", prevent submission and show setup message
+            if (this.getAttribute('action') === '#') {
+                e.preventDefault();
+                alert('Newsletter formulár ešte nie je nastavený. Kontaktujte administrátora pre nastavenie Mailchimp integrácie.');
+                return;
+            }
+            
+            // For valid Mailchimp forms, let the form submit naturally
+            // Add loading state
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Zapisujem...';
+            submitButton.disabled = true;
+            
+            // Close popup if it's the popup form (after a delay for submission)
+            if (this.classList.contains('popup-form')) {
+                setTimeout(() => {
                     newsletterPopup.style.display = 'none';
                     localStorage.setItem('newsletter-shown', 'true');
-                }
-            } else {
-                alert('Prosím zadajte platnú emailovú adresu.');
+                }, 1000);
             }
+            
+            // Reset button state after delay
+            setTimeout(() => {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }, 2000);
         });
     });
 
-    // Contact form submission
-    const contactForm = document.querySelector('.contact-form form, .contact-form-detailed');
+    // Contact form submission (Netlify Forms integration)
+    const contactForm = document.querySelector('form[name="contact"]');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             const name = this.querySelector('input[name="name"]').value;
             const email = this.querySelector('input[name="email"]').value;
+            const subject = this.querySelector('select[name="subject"]').value;
             const message = this.querySelector('textarea[name="message"]').value;
             const privacy = this.querySelector('input[name="privacy"]').checked;
             
-            if (name && validateEmail(email) && message && privacy) {
-                // Here you would typically send the form data to your backend
-                alert('Ďakujeme za vašu správu! Odpovieme vám čo najskôr.');
-                this.reset();
-            } else {
+            // Client-side validation
+            if (!name || !validateEmail(email) || !subject || !message || !privacy) {
+                e.preventDefault();
                 alert('Prosím vyplňte všetky povinné polia správne a súhlaste so spracovaním osobných údajov.');
+                return;
             }
+            
+            // Add loading state
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Odosielam...';
+            submitButton.disabled = true;
+            
+            // Let Netlify handle the form submission
+            // The form will redirect or show success based on Netlify configuration
         });
+        
+        // Handle Netlify form success (if using query parameter)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('submitted') === 'true') {
+            document.getElementById('contact-success').style.display = 'block';
+            contactForm.style.display = 'none';
+        }
     }
 
     // Calendar functionality
