@@ -3044,6 +3044,24 @@ p {
     text-decoration: underline;
 }
 
+/* Standard bullet points for location notes */
+.standard-bullets {
+    list-style: disc !important;
+    padding-left: 1.5rem !important;
+}
+
+.standard-bullets li {
+    padding: 0.3rem 0 !important;
+    padding-left: 0 !important;
+    position: relative !important;
+    line-height: 1.5 !important;
+    font-size: 0.95rem !important;
+}
+
+.standard-bullets li::before {
+    display: none !important;
+}
+
 .equipment-card {
     background: var(--light-color);
     border-radius: 16px;
