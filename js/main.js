@@ -68,27 +68,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Newsletter form submissions (Mailchimp integration)
+    // Newsletter form submissions (Brevo integration)
     const newsletterForms = document.querySelectorAll('.newsletter-form, .popup-form');
     newsletterForms.forEach(form => {
         form.addEventListener('submit', function(e) {
             const email = this.querySelector('input[name="EMAIL"]').value;
+            const gdprConsent = this.querySelector('input[name="OPT_IN"]');
             
-            // Simple email validation
+            // Email validation
             if (!validateEmail(email)) {
                 e.preventDefault();
                 alert('Prosím zadajte platnú emailovú adresu.');
                 return;
             }
             
-            // If action is still "#", prevent submission and show setup message
-            if (this.getAttribute('action') === '#') {
+            // GDPR consent validation
+            if (!gdprConsent || !gdprConsent.checked) {
                 e.preventDefault();
-                alert('Newsletter formulár ešte nie je nastavený. Kontaktujte administrátora pre nastavenie Mailchimp integrácie.');
+                alert('Pre odber newslettera musíte súhlasiť so spracovaním osobných údajov.');
                 return;
             }
             
-            // For valid Mailchimp forms, let the form submit naturally
             // Add loading state
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
@@ -107,6 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
+                // Reset form
+                this.reset();
             }, 2000);
         });
     });

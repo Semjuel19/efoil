@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newsletter prihlásenie úspešné - Slovak eFoil and eSurf Association</title>
+    <meta
+      name="description"
+      content="Úspešne si sa prihlásil na odber newslettera. Ďakujeme za váš záujem."
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+         <div class="nav-logo">
+           <a href="index.html"><h2>EFESA.SK</h2></a>
+         </div>
+        <div class="nav-menu" id="nav-menu">
+          <a href="index.html#co-je-efoil" class="nav-link">Čo je eFoil</a>
+          <a href="index.html#kde-kupit" class="nav-link">Kde kúpiť</a>
+          <a href="index.html#kde-jazdit" class="nav-link">Kde jazdiť</a>
+          <a href="index.html#bezpecnost" class="nav-link">Bezpečnosť</a>
+          <a href="index.html#komunita" class="nav-link">Komunita</a>
+          <a href="index.html#kontakt" class="nav-link">Kontakt</a>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Newsletter Success Page Content -->
+    <section class="section">
+      <div class="container" style="text-align: center;">
+        <div style="max-width: 600px; margin: 0 auto;">
+          <div style="background: #d4edda; color: #155724; padding: 3rem; border-radius: 15px; margin: 3rem 0; border: 1px solid #c3e6cb;">
+            <p style="color: #155724; margin: 0; font-size: 1.2rem;">Úspešne si sa prihlásil na odber.</p>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <a href="index.html" class="btn btn-primary">Späť na hlavnú stránku</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>efesa sk</h3>
+            <p>Slovak eFoil and eSurf Association</p>
+            <p>
+              Združenie pre rozvoj elektrických vodných športov na Slovensku
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Rýchle odkazy</h4>
+            <ul>
+              <li><a href="index.html#co-je-efoil">Čo je eFoil</a></li>
+              <li><a href="index.html#kde-kupit">Kde kúpiť</a></li>
+              <li><a href="index.html#kde-jazdit">Kde jazdiť</a></li>
+              <li><a href="index.html#bezpecnost">Bezpečnosť</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Komunita</h4>
+            <ul>
+              <li><a href="index.html#komunita">Eventy</a></li>
+              <li><a href="index.html#kontakt">Kontakt</a></li>
+              <li><a href="index.html#komunita">Fórum</a></li>
+              <li><a href="index.html#komunita">Partneri</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Informácie</h4>
+            <ul>
+              <li><a href="index.html#kontakt">Členstvo</a></li>
+              <li><a href="index.html#kontakt">Partnerstvo</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Slovak eFoil and eSurf Association. Všetky práva
+            vyhradené.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Redirect to home page after 8 seconds
+      setTimeout(function() {
+        window.location.href = 'index.html';
+      }, 8000);
+
+      // Mobile Navigation Toggle
+      document.addEventListener('DOMContentLoaded', function() {
+          const navToggle = document.getElementById('nav-toggle');
+          const navMenu = document.getElementById('nav-menu');
+
+          navToggle.addEventListener('click', function() {
+              navMenu.classList.toggle('active');
+              navToggle.classList.toggle('active');
+          });
+      });
+    </script>
+  </body>
+</html>

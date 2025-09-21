@@ -1578,18 +1578,23 @@
             Prihlás sa na odber noviniek a nezmeškaj žiadne eventy ani
             novinky zo sveta eFoilingu.
           </p>
-          <!-- Replace with your actual Mailchimp form action URL -->
-          <form class="newsletter-form" action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+          <form class="newsletter-form" action="https://4952516d.sibforms.com/serve/MUIFAGJOlYFM7MbN2pxyOE3p-TIx59sAXEK0vm5uiBKuXd0BHJayzgrqHce_YwXP8XvWlDyWl5l0qjqKs-ivdwXN5G0OJuDhbcuQWANzsYY8CRzo009_MlnfR3ORG1DH-IoObwFRs3-_ganJn-gvK4JSuglB8YJlCHZ1c70hF1S30BHpU018kTLvFdvFu0TOKHV8Vj28H8xqhPZ3" method="post" data-type="subscription">
             <input type="email" name="EMAIL" placeholder="Tvoj email" required />
-            <input type="hidden" name="SOURCE" value="website-newsletter-section" />
-            <!-- Add additional Mailchimp hidden fields here when you get your form -->
+            <input type="hidden" name="locale" value="sk" />
+            <input type="text" name="email_address_check" value="" style="display: none;" />
+            
+            <!-- GDPR Compliance -->
+            <div class="gdpr-consent" style="margin: 1rem 0; display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.9);">
+              <input type="checkbox" name="OPT_IN" value="1" required style="margin-top: 0.2rem; flex-shrink: 0;" />
+              <label for="OPT_IN" style="line-height: 1.4;">
+                Súhlasím s odberom newslettera a so spracovaním osobných údajov v súlade s 
+                <a href="https://www.brevo.com/en/legal/privacypolicy/" target="_blank" style="color: rgba(255, 255, 255, 0.9); text-decoration: underline;">ochranou osobných údajov Brevo</a>. 
+                Odber môžem kedykoľvek zrušiť.
+              </label>
+            </div>
+            
             <button type="submit" class="btn btn-primary" name="subscribe">Prihlásiť sa</button>
           </form>
-          
-          <!-- Newsletter signup instructions (remove after Mailchimp setup) -->
-          <div class="mailchimp-setup-note" style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 8px; font-size: 0.9rem; opacity: 0.8;">
-            <strong>Pre administrátora:</strong> Nahraďte action="#" skutočnou Mailchimp URL po nastavení účtu.
-          </div>
         </div>
       </div>
     </section>
@@ -1745,16 +1750,38 @@
           Prihlás sa na odber noviniek a nezmeškaj žiadne eventy ani novinky
           zo sveta eFoilingu.
         </p>
-        <!-- Replace with your actual Mailchimp form action URL -->
-        <form class="popup-form" action="#" method="post" target="_blank">
+        <form class="popup-form" action="https://4952516d.sibforms.com/serve/MUIFAGJOlYFM7MbN2pxyOE3p-TIx59sAXEK0vm5uiBKuXd0BHJayzgrqHce_YwXP8XvWlDyWl5l0qjqKs-ivdwXN5G0OJuDhbcuQWANzsYY8CRzo009_MlnfR3ORG1DH-IoObwFRs3-_ganJn-gvK4JSuglB8YJlCHZ1c70hF1S30BHpU018kTLvFdvFu0TOKHV8Vj28H8xqhPZ3" method="post" data-type="subscription">
           <input type="email" name="EMAIL" placeholder="Tvoj email" required />
-          <input type="hidden" name="SOURCE" value="website-popup" />
-          <!-- Add additional Mailchimp hidden fields here when you get your form -->
+          <input type="hidden" name="locale" value="sk" />
+          <input type="text" name="email_address_check" value="" style="display: none;" />
+          
+          <!-- GDPR Compliance for popup -->
+          <div class="gdpr-consent" style="margin: 1rem 0; display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.85rem; color: var(--dark-color); text-align: left;">
+            <input type="checkbox" name="OPT_IN" value="1" required style="margin-top: 0.2rem; flex-shrink: 0;" />
+            <label for="OPT_IN" style="line-height: 1.4;">
+              Súhlasím s odberom newslettera a so spracovaním osobných údajov v súlade s 
+              <a href="https://www.brevo.com/en/legal/privacypolicy/" target="_blank" style="color: var(--primary-color); text-decoration: underline;">ochranou osobných údajov Brevo</a>. 
+              Odber môžem kedykoľvek zrušiť.
+            </label>
+          </div>
+          
           <button type="submit" class="btn btn-primary" name="subscribe">Prihlásiť sa</button>
         </form>
       </div>
     </div>
 
     <script src="js/main.js"></script>
+    
+    <!-- Brevo Form Script -->
+    <script>
+      window.REQUIRED_CODE_ERROR_MESSAGE = 'Prosím vyberte kód krajiny';
+      window.LOCALE = 'sk';
+      window.EMAIL_INVALID_MESSAGE = 'Zadaná emailová adresa nie je platná. Prosím skontrolujte formát a skúste znovu.';
+      window.REQUIRED_ERROR_MESSAGE = 'Toto pole nemôže zostať prázdne.';
+      window.GENERIC_INVALID_MESSAGE = 'Zadané informácie nie sú platné. Prosím skontrolujte formát a skúste znovu.';
+      
+      var AUTOHIDE = Boolean(0);
+    </script>
+    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
   </body>
 </html>
