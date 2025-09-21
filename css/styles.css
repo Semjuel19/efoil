@@ -1694,7 +1694,7 @@ p {
 }
 
 .destination-header {
-    padding: 1.5rem;
+    padding: 2rem;
     border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
@@ -1734,14 +1734,14 @@ p {
 }
 
 .destination-content {
-    padding: 1.5rem;
+    padding: 2rem;
 }
 
 .destination-note {
     background: var(--light-gray);
     padding: 1rem;
     border-radius: 8px;
-    margin-top: 1rem;
+    margin: 1.5rem 0;
     font-style: italic;
     font-size: 0.95rem;
 }
