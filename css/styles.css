@@ -122,8 +122,8 @@ p {
 }
 
 .btn-secondary:hover {
-    background: var(--light-color);
-    color: var(--primary-color);
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--light-color);
     transform: translateY(-1px);
 }
 
