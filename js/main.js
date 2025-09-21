@@ -141,8 +141,17 @@ document.addEventListener('DOMContentLoaded', function() {
         // Handle Netlify form success (if using query parameter)
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('submitted') === 'true') {
-            document.getElementById('contact-success').style.display = 'block';
-            contactForm.style.display = 'none';
+            const successMessage = document.getElementById('contact-success');
+            if (successMessage) {
+                successMessage.style.display = 'block';
+                contactForm.style.display = 'none';
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+                
+                // Clean URL after showing success message
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
         }
     }
 

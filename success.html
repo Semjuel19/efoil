@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Správa odoslaná - Slovak eFoil and eSurf Association</title>
+    <meta
+      name="description"
+      content="Vaša správa bola úspešne odoslaná. Ďakujeme za váš záujem."
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+         <div class="nav-logo">
+           <a href="index.html"><h2>EFESA.SK</h2></a>
+         </div>
+        <div class="nav-menu" id="nav-menu">
+          <a href="index.html#co-je-efoil" class="nav-link">Čo je eFoil</a>
+          <a href="index.html#kde-kupit" class="nav-link">Kde kúpiť</a>
+          <a href="index.html#kde-jazdit" class="nav-link">Kde jazdiť</a>
+          <a href="index.html#bezpecnost" class="nav-link">Bezpečnosť</a>
+          <a href="index.html#komunita" class="nav-link">Komunita</a>
+          <a href="index.html#kontakt" class="nav-link">Kontakt</a>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Success Page Content -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Ďakujeme za vašu správu!</h1>
+        <p>Vaša správa bola úspešne odoslaná. Odpovieme vám čo najskôr.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="text-align: center;">
+        <div style="max-width: 600px; margin: 0 auto;">
+          <div style="background: #d4edda; color: #155724; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; border: 1px solid #c3e6cb;">
+            <h3 style="color: #155724; margin-bottom: 1rem;">✅ Správa bola odoslaná</h3>
+            <p style="color: #155724; margin-bottom: 1rem;">Vaša správa bola úspešne doručená do našej schránky. Náš tím ju prečíta a odpovie vám čo najskôr, zvyčajne do 24 hodín.</p>
+            <p style="color: #155724; margin: 0;">Ak máte naliehavý dotaz, môžete nás kontaktovať priamo na email: <strong>info@efesa.sk</strong></p>
+          </div>
+
+          <div style="margin: 2rem 0;">
+            <h3>Čo môžete robiť ďalej?</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+              <a href="index.html#co-je-efoil" class="btn btn-outline">Dozvedieť sa viac o eFoil</a>
+              <a href="index.html#kde-kupit" class="btn btn-outline">Kde kúpiť eFoil</a>
+              <a href="index.html#kde-jazdit" class="btn btn-outline">Miesta na jazdu</a>
+            </div>
+          </div>
+
+          <div style="margin-top: 3rem;">
+            <a href="index.html" class="btn btn-primary">Späť na hlavnú stránku</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>efesa sk</h3>
+            <p>Slovak eFoil and eSurf Association</p>
+            <p>
+              Združenie pre rozvoj elektrických vodných športov na Slovensku
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Rýchle odkazy</h4>
+            <ul>
+              <li><a href="index.html#co-je-efoil">Čo je eFoil</a></li>
+              <li><a href="index.html#kde-kupit">Kde kúpiť</a></li>
+              <li><a href="index.html#kde-jazdit">Kde jazdiť</a></li>
+              <li><a href="index.html#bezpecnost">Bezpečnosť</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Komunita</h4>
+            <ul>
+              <li><a href="index.html#komunita">Eventy</a></li>
+              <li><a href="index.html#kontakt">Kontakt</a></li>
+              <li><a href="index.html#komunita">Fórum</a></li>
+              <li><a href="index.html#komunita">Partneri</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Informácie</h4>
+            <ul>
+              <li><a href="index.html#kontakt">Členstvo</a></li>
+              <li><a href="index.html#kontakt">Partnerstvo</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Slovak eFoil and eSurf Association. Všetky práva
+            vyhradené.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Redirect to home page after 10 seconds
+      setTimeout(function() {
+        window.location.href = 'index.html';
+      }, 10000);
+
+      // Mobile Navigation Toggle
+      document.addEventListener('DOMContentLoaded', function() {
+          const navToggle = document.getElementById('nav-toggle');
+          const navMenu = document.getElementById('nav-menu');
+
+          navToggle.addEventListener('click', function() {
+              navMenu.classList.toggle('active');
+              navToggle.classList.toggle('active');
+          });
+      });
+    </script>
+  </body>
+</html>

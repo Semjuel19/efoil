@@ -102,8 +102,29 @@ This guide explains how to complete the setup for your contact form (Netlify) an
 ### Test Contact Form:
 1. Deploy to Netlify
 2. Fill out contact form on live site
-3. Check Netlify Dashboard → Forms for submission
+3. **Check form submissions in Netlify:**
+   - Go to Netlify Dashboard
+   - Click on your site
+   - Go to "Forms" tab in the left sidebar
+   - You should see form submissions listed there
 4. Verify email notifications
+
+### Troubleshooting Form Issues:
+
+**Form not appearing in Netlify Dashboard:**
+- Make sure you deployed AFTER adding the Netlify form attributes
+- Check that `data-netlify="true"` is present in the form tag
+- Netlify needs to crawl the deployed HTML to detect forms
+
+**404 Error after form submission:**
+- Fixed with success page redirect (already implemented)
+- Form now redirects to `/success.html` after submission
+
+**Form submissions not visible:**
+- Go to your Netlify site dashboard
+- Click "Forms" in the left sidebar
+- If no forms appear, redeploy your site
+- Check that the form has `name="contact"` attribute
 
 ### Test Newsletter:
 1. Complete Mailchimp setup
