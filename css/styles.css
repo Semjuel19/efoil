@@ -2905,10 +2905,16 @@ p {
 }
 
 .equipment-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     margin-top: 2rem;
+    justify-content: center;
+}
+
+.equipment-card {
+    flex: 0 1 320px;
+    max-width: 400px;
 }
 
 .equipment-card {
