@@ -650,7 +650,6 @@ p {
     opacity: 0.8;
 }
 
-/* Popup form adjustments */
 .popup-form {
     flex-direction: column;
     gap: 1rem;
