@@ -3199,11 +3199,15 @@ input[name="OPT_IN"] {
 }
 
 .equipment-card.vest {
-    border-top: 3px solid var(--secondary-color);
+    border-top: 3px solid var(--primary-color);
+}
+
+.equipment-card.reflex {
+    border-top: 3px solid var(--primary-color);
 }
 
 .equipment-card.gps {
-    border-top: 3px solid var(--primary-color);
+    border-top: 3px solid var(--secondary-color);
 }
 
 .equipment-badge {
