@@ -625,41 +625,72 @@ p {
 }
 
 /* GDPR Consent Styling - Force visibility against external stylesheets */
-.gdpr-consent {
+.gdpr-consent,
+.newsletter-gdpr,
+.popup-gdpr {
     display: flex !important;
-    text-align: left;
+    text-align: left !important;
     visibility: visible !important;
     opacity: 1 !important;
+    position: relative !important;
+    z-index: 999 !important;
 }
 
-.gdpr-consent input[type="checkbox"] {
+.gdpr-consent input[type="checkbox"],
+#newsletter-opt-in,
+#popup-opt-in {
     display: inline-block !important;
     visibility: visible !important;
-    width: auto;
-    margin: 0;
-    margin-top: 0.2rem;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    margin-top: 0.2rem !important;
     opacity: 1 !important;
+    position: relative !important;
+    z-index: 1000 !important;
 }
 
-.gdpr-consent label {
+.gdpr-consent label,
+label[for="newsletter-opt-in"],
+label[for="popup-opt-in"] {
     display: inline-block !important;
     visibility: visible !important;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    margin: 0;
-    cursor: pointer;
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
     opacity: 1 !important;
+    position: relative !important;
+    z-index: 1000 !important;
 }
 
 .gdpr-consent a {
-    text-decoration: underline;
+    text-decoration: underline !important;
     display: inline !important;
     visibility: visible !important;
     opacity: 1 !important;
+    position: relative !important;
+    z-index: 1000 !important;
 }
 
 .gdpr-consent a:hover {
     opacity: 0.8 !important;
+}
+
+/* Override any external CSS trying to hide GDPR elements */
+input[name="OPT_IN"] {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Specific overrides for Brevo hiding elements */
+.sib-form .gdpr-consent,
+.sib-form input[name="OPT_IN"],
+.sib-form label[for*="opt-in"] {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .popup-form {
