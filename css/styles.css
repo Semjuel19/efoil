@@ -624,30 +624,42 @@ p {
     width: 100%;
 }
 
-/* GDPR Consent Styling */
+/* GDPR Consent Styling - Force visibility against external stylesheets */
 .gdpr-consent {
+    display: flex !important;
     text-align: left;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .gdpr-consent input[type="checkbox"] {
+    display: inline-block !important;
+    visibility: visible !important;
     width: auto;
     margin: 0;
     margin-top: 0.2rem;
+    opacity: 1 !important;
 }
 
 .gdpr-consent label {
+    display: inline-block !important;
+    visibility: visible !important;
     font-size: 0.85rem;
     line-height: 1.4;
     margin: 0;
     cursor: pointer;
+    opacity: 1 !important;
 }
 
 .gdpr-consent a {
     text-decoration: underline;
+    display: inline !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .gdpr-consent a:hover {
-    opacity: 0.8;
+    opacity: 0.8 !important;
 }
 
 .popup-form {
