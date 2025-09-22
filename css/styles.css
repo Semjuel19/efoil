@@ -624,10 +624,10 @@ p {
     width: 100%;
 }
 
-/* GDPR Consent Styling - Force visibility against external stylesheets */
-.gdpr-consent,
-.newsletter-gdpr,
-.popup-gdpr {
+/* EFESA Privacy Checkbox Styling - Unique class names to avoid conflicts */
+.efesa-privacy-check,
+.efesa-newsletter-privacy,
+.efesa-popup-privacy {
     display: flex !important;
     text-align: left !important;
     visibility: visible !important;
@@ -636,9 +636,9 @@ p {
     z-index: 999 !important;
 }
 
-.gdpr-consent input[type="checkbox"],
-#newsletter-opt-in,
-#popup-opt-in {
+.efesa-privacy-check input[type="checkbox"],
+#efesa-newsletter-consent,
+#efesa-popup-consent {
     display: inline-block !important;
     visibility: visible !important;
     width: auto !important;
@@ -650,9 +650,9 @@ p {
     z-index: 1000 !important;
 }
 
-.gdpr-consent label,
-label[for="newsletter-opt-in"],
-label[for="popup-opt-in"] {
+.efesa-privacy-check label,
+label[for="efesa-newsletter-consent"],
+label[for="efesa-popup-consent"] {
     display: inline-block !important;
     visibility: visible !important;
     font-size: 0.85rem !important;
@@ -664,7 +664,7 @@ label[for="popup-opt-in"] {
     z-index: 1000 !important;
 }
 
-.gdpr-consent a {
+.efesa-privacy-check a {
     text-decoration: underline !important;
     display: inline !important;
     visibility: visible !important;
@@ -673,22 +673,13 @@ label[for="popup-opt-in"] {
     z-index: 1000 !important;
 }
 
-.gdpr-consent a:hover {
+.efesa-privacy-check a:hover {
     opacity: 0.8 !important;
 }
 
-/* Override any external CSS trying to hide GDPR elements */
+/* Override any external CSS trying to hide EFESA privacy elements */
 input[name="OPT_IN"] {
     display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-/* Specific overrides for Brevo hiding elements */
-.sib-form .gdpr-consent,
-.sib-form input[name="OPT_IN"],
-.sib-form label[for*="opt-in"] {
-    display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
 }
