@@ -1898,6 +1898,9 @@ input[name="OPT_IN"] {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .comparison-card:hover {
@@ -1939,6 +1942,9 @@ input[name="OPT_IN"] {
 
 .card-content {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .card-feature {
@@ -1950,7 +1956,7 @@ input[name="OPT_IN"] {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: auto;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border-color);
 }
